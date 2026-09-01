@@ -1,0 +1,44 @@
+# Dependencies
+node_modules/
+*/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment Variables & Secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+server/.env
+server/env
+client/.env
+
+# Build outputs
+dist/
+client/dist/
+build/
+*.tsbuildinfo
+
+# Uploads & User Media (keep directory structure if needed)
+server/uploads/*
+!server/uploads/.gitkeep
+
+# Logs & Temporary files
+logs/
+*.log
+.system_generated/
+scratch/
+
+# OS and Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
