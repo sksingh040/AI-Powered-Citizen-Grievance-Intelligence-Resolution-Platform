@@ -1,0 +1,586 @@
+{
+  "users": [
+    {
+      "name": "Ramesh Sharma (Citizen)",
+      "email": "citizen@example.com",
+      "phone": "+91 98765 43210",
+      "password": "password123",
+      "role": "citizen",
+      "ward": "Ward-12 (Connaught Place & Central)",
+      "jurisdictionZone": "Central Zone",
+      "languagePreference": "hi"
+    },
+    {
+      "name": "Rajesh Verma (Field Officer)",
+      "email": "officer@roads.gov.in",
+      "phone": "+91 98111 22334",
+      "password": "password123",
+      "role": "field_officer",
+      "department": "dept_roads",
+      "ward": "Ward-12 (Connaught Place & Central)",
+      "jurisdictionZone": "Central Zone"
+    },
+    {
+      "name": "Sunita Rao (Supervisor)",
+      "email": "supervisor@civic.gov.in",
+      "phone": "+91 98222 33445",
+      "password": "password123",
+      "role": "supervisor",
+      "department": "dept_roads",
+      "ward": "Ward-12 (Connaught Place & Central)",
+      "jurisdictionZone": "Central Zone"
+    },
+    {
+      "name": "Dr. Amit Malhotra (Municipal Commissioner)",
+      "email": "admin@delhi.gov.in",
+      "phone": "+91 98333 44556",
+      "password": "password123",
+      "role": "admin",
+      "department": null,
+      "ward": "All Wards",
+      "jurisdictionZone": "All Zones"
+    },
+    {
+      "name": "Kavita Swaminathan (Grievance Auditor)",
+      "email": "auditor@audit.gov.in",
+      "phone": "+91 98444 55667",
+      "password": "password123",
+      "role": "auditor",
+      "department": null,
+      "ward": "All Wards",
+      "jurisdictionZone": "All Zones"
+    }
+  ],
+  "complaints": [
+    {
+      "ticketId": "GRV-2026-00101",
+      "intakeChannel": "voice_bot",
+      "language": "hi",
+      "originalText": "एम्स अस्पताल के पास मुख्य सड़क पर 3 फीट गहरा खतरनाक गड्ढा है। बारिश के कारण पानी भर गया है और बाइक सवार गिर रहे हैं। तुरंत ठीक करवाएं।",
+      "translatedText": "There is a dangerous 3 feet deep pothole on the main road near AIIMS Hospital. Water has filled up due to rain and bikers are slipping. Please fix immediately.",
+      "voiceRecording": {
+        "audioUrl": "https://actions.google.com/sounds/v1/ambiences/rain_heavy.ogg",
+        "transcript": "एम्स अस्पताल के पास मुख्य सड़क पर खतरनाक गड्ढा है...",
+        "detectedLanguage": "hi"
+      },
+      "media": [
+        {
+          "url": "https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?w=800&auto=format&fit=crop&q=60",
+          "type": "image",
+          "caption": "Deep pothole filled with rain water on main road",
+          "stage": "submission",
+          "aiTags": ["pothole", "road hazard", "standing water"]
+        }
+      ],
+      "location": {
+        "lat": 28.5672,
+        "lng": 77.2100,
+        "address": "Ring Road near AIIMS Main Gate, Ansari Nagar",
+        "landmark": "Near AIIMS Metro Gate 2",
+        "ward": "Ward-12 (Connaught Place & Central)",
+        "zone": "Central Zone",
+        "isSensitiveZone": true,
+        "sensitiveZoneType": "Hospital"
+      },
+      "aiInference": {
+        "predictedDepartment": "ROADS",
+        "predictedCategory": "pothole",
+        "confidenceScore": 0.96,
+        "rationale": "High-confidence road crater detected near sensitive hospital corridor. Direct vehicle collision and pedestrian risk.",
+        "visualCues": ["Surface asphalt crater", "Water logged road cavity", "High traffic density risk"],
+        "sentimentUrgency": "high",
+        "isSafetyHazard": true,
+        "humanVerified": true,
+        "verifiedBy": "Sunita Rao (Supervisor)"
+      },
+      "priority": {
+        "score": 88,
+        "band": "Critical",
+        "breakdown": {
+          "severity": 25,
+          "publicSafetyRisk": 25,
+          "populationImpact": 18,
+          "sensitiveZoneBonus": 20,
+          "recurrenceCount": 0,
+          "slaProximityWeight": 0
+        },
+        "topFactors": [
+          "Direct public safety hazard detected (+25 pts)",
+          "High vulnerability zone: AIIMS Hospital (+20 pts)",
+          "High density population impact (+18 pts)",
+          "High distress/urgency detected in citizen narrative"
+        ]
+      },
+      "departmentId": "dept_roads",
+      "departmentName": "Roads & Infrastructure",
+      "status": "in_progress",
+      "slaHours": 24,
+      "assignedOfficer": {
+        "name": "Rajesh Verma (Field Officer)",
+        "assignedAt": "2026-08-30T10:00:00.000Z"
+      },
+      "timeline": [
+        {
+          "status": "submitted",
+          "actorName": "Ramesh Sharma (Citizen)",
+          "actorRole": "citizen",
+          "timestamp": "2026-08-30T09:30:00.000Z",
+          "comment": "Voice grievance submitted in Hindi",
+          "publicSafeMessage": "Complaint registered via Voice intake with GPS coordinates."
+        },
+        {
+          "status": "ai_triaged",
+          "actorName": "AI Engine (Indic Triage Core)",
+          "actorRole": "system",
+          "timestamp": "2026-08-30T09:30:04.000Z",
+          "comment": "Priority 88 (Critical) assigned with Hospital zone modifier",
+          "publicSafeMessage": "AI validated category: Roads & Infrastructure. Priority set to Critical."
+        },
+        {
+          "status": "in_progress",
+          "actorName": "Rajesh Verma (Field Officer)",
+          "actorRole": "field_officer",
+          "timestamp": "2026-08-30T10:15:00.000Z",
+          "comment": "Work order #WO-8849 dispatched. Asphalt patch crew on site.",
+          "publicSafeMessage": "Field repair team dispatched to location with patch materials."
+        }
+      ]
+    },
+    {
+      "ticketId": "GRV-2026-00102",
+      "intakeChannel": "web",
+      "language": "en",
+      "originalText": "Severe sewage and dirty drain water overflowing across the entire street in Karol Bagh Market. Stinking smell and shop access blocked.",
+      "translatedText": "Severe sewage and dirty drain water overflowing across the entire street in Karol Bagh Market. Stinking smell and shop access blocked.",
+      "media": [
+        {
+          "url": "https://images.unsplash.com/photo-1599839575945-a9e5af0c3fa5?w=800&auto=format&fit=crop&q=60",
+          "type": "image",
+          "caption": "Drain overflow on Karol Bagh street",
+          "stage": "submission",
+          "aiTags": ["drainage overflow", "sewage", "market"]
+        }
+      ],
+      "location": {
+        "lat": 28.6515,
+        "lng": 77.1890,
+        "address": "Arya Samaj Road, Karol Bagh",
+        "landmark": "Near Gaffar Market Crossing",
+        "ward": "Ward-08 (Karol Bagh & Pusa)",
+        "zone": "North Central Zone",
+        "isSensitiveZone": true,
+        "sensitiveZoneType": "Marketplace"
+      },
+      "aiInference": {
+        "predictedDepartment": "WATER",
+        "predictedCategory": "drainage_overflow",
+        "confidenceScore": 0.94,
+        "rationale": "High volume wastewater backflow detected obstructing commercial market thoroughfare.",
+        "visualCues": ["Wastewater backflow", "Flooded street curb", "Sanitary hazard"],
+        "sentimentUrgency": "high",
+        "isSafetyHazard": true,
+        "humanVerified": true,
+        "verifiedBy": "Sunita Rao (Supervisor)"
+      },
+      "priority": {
+        "score": 76,
+        "band": "High",
+        "breakdown": {
+          "severity": 28,
+          "publicSafetyRisk": 20,
+          "populationImpact": 15,
+          "sensitiveZoneBonus": 13,
+          "recurrenceCount": 0,
+          "slaProximityWeight": 0
+        },
+        "topFactors": [
+          "Direct public health bio-risk (+20 pts)",
+          "Commercial marketplace population impact (+15 pts)",
+          "Drainage backflow hazard"
+        ]
+      },
+      "departmentId": "dept_water",
+      "departmentName": "Water Supply & Sewage",
+      "status": "assigned",
+      "slaHours": 36,
+      "assignedOfficer": {
+        "name": "K. S. Nair (Junior Engineer)",
+        "assignedAt": "2026-08-30T11:00:00.000Z"
+      },
+      "timeline": [
+        {
+          "status": "submitted",
+          "actorName": "Pooja Gupta",
+          "actorRole": "citizen",
+          "timestamp": "2026-08-30T10:45:00.000Z",
+          "comment": "Report submitted via web portal with photo",
+          "publicSafeMessage": "Complaint registered successfully."
+        },
+        {
+          "status": "assigned",
+          "actorName": "Sunita Rao (Supervisor)",
+          "actorRole": "supervisor",
+          "timestamp": "2026-08-30T11:00:00.000Z",
+          "comment": "Assigned to Water Supply suction pump team",
+          "publicSafeMessage": "Assigned to Water Supply & Sewage Department."
+        }
+      ]
+    },
+    {
+      "ticketId": "GRV-2026-00103",
+      "intakeChannel": "mobile_pwa",
+      "language": "en",
+      "originalText": "Drain blocked and dirty water leaking near Karol Bagh shop #45.",
+      "translatedText": "Drain blocked and dirty water leaking near Karol Bagh shop #45.",
+      "location": {
+        "lat": 28.6520,
+        "lng": 77.1895,
+        "address": "Arya Samaj Road, Opp Shop #45, Karol Bagh",
+        "landmark": "Near Gaffar Market",
+        "ward": "Ward-08 (Karol Bagh & Pusa)",
+        "zone": "North Central Zone"
+      },
+      "aiInference": {
+        "predictedDepartment": "WATER",
+        "predictedCategory": "drainage_overflow",
+        "confidenceScore": 0.91,
+        "rationale": "High spatial-temporal correlation with active incident GRV-2026-00102 (70m away).",
+        "visualCues": ["Drainage blockage", "Street water leak"],
+        "sentimentUrgency": "moderate",
+        "isSafetyHazard": true
+      },
+      "priority": {
+        "score": 72,
+        "band": "High",
+        "breakdown": {
+          "severity": 28,
+          "publicSafetyRisk": 18,
+          "populationImpact": 14,
+          "sensitiveZoneBonus": 12,
+          "recurrenceCount": 0,
+          "slaProximityWeight": 0
+        },
+        "topFactors": ["Nearby cluster detected", "High density commercial impact"]
+      },
+      "duplicateDetection": {
+        "isPotentialDuplicate": true,
+        "similarityScore": 92,
+        "primaryTicketId": "GRV-2026-00102",
+        "linkedAt": "2026-08-30T11:20:00.000Z"
+      },
+      "departmentId": "dept_water",
+      "departmentName": "Water Supply & Sewage",
+      "status": "duplicate_linked",
+      "slaHours": 36,
+      "timeline": [
+        {
+          "status": "submitted",
+          "actorName": "Vikram Seth",
+          "actorRole": "citizen",
+          "timestamp": "2026-08-30T11:15:00.000Z",
+          "comment": "Report submitted",
+          "publicSafeMessage": "Complaint registered."
+        },
+        {
+          "status": "duplicate_linked",
+          "actorName": "AI Engine (Cluster Engine)",
+          "actorRole": "system",
+          "timestamp": "2026-08-30T11:20:00.000Z",
+          "comment": "Linked to Master Incident Cluster #INC-KB-001. Citizen will receive unified resolution updates.",
+          "publicSafeMessage": "Linked with active nearby incident for coordinated resolution."
+        }
+      ]
+    },
+    {
+      "ticketId": "GRV-2026-00104",
+      "intakeChannel": "web",
+      "language": "en",
+      "originalText": "Streetlight pole #SL-12 completely dark for 4 nights near Lajpat Nagar Block B park. Female residents and children feel unsafe.",
+      "translatedText": "Streetlight pole #SL-12 completely dark for 4 nights near Lajpat Nagar Block B park. Female residents and children feel unsafe.",
+      "media": [
+        {
+          "url": "https://images.unsplash.com/photo-1509114397022-ed747cca3f65?w=800&auto=format&fit=crop&q=60",
+          "type": "image",
+          "caption": "Dark unlit street section",
+          "stage": "submission",
+          "aiTags": ["dark street", "broken streetlight"]
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=800&auto=format&fit=crop&q=60",
+          "type": "image",
+          "caption": "Repaired and illuminated streetlight luminaire with new LED fixture",
+          "stage": "resolution",
+          "aiTags": ["illuminated streetlight", "work completed"]
+        }
+      ],
+      "location": {
+        "lat": 28.5700,
+        "lng": 77.2400,
+        "address": "Block B Central Avenue, Lajpat Nagar II",
+        "landmark": "Opposite Central Community Park",
+        "ward": "Ward-15 (Lajpat Nagar & South)",
+        "zone": "South Zone",
+        "isSensitiveZone": false
+      },
+      "aiInference": {
+        "predictedDepartment": "ELEC",
+        "predictedCategory": "streetlight_dark",
+        "confidenceScore": 0.95,
+        "rationale": "Lighting failure verified at municipal pole coordinate.",
+        "visualCues": ["Inoperative luminaire", "Unlit pedestrian walkway"],
+        "sentimentUrgency": "high",
+        "isSafetyHazard": false,
+        "humanVerified": true,
+        "verifiedBy": "Sunita Rao (Supervisor)"
+      },
+      "priority": {
+        "score": 58,
+        "band": "Normal",
+        "breakdown": {
+          "severity": 15,
+          "publicSafetyRisk": 18,
+          "populationImpact": 15,
+          "sensitiveZoneBonus": 0,
+          "recurrenceCount": 10,
+          "slaProximityWeight": 0
+        },
+        "topFactors": ["Pedestrian night safety vulnerability", "Repeated neighborhood reports"]
+      },
+      "departmentId": "dept_electrical",
+      "departmentName": "Street Lighting & Power",
+      "status": "resolved",
+      "slaHours": 24,
+      "assignedOfficer": {
+        "name": "Manish Kumar (Electrical Inspector)",
+        "assignedAt": "2026-08-29T14:00:00.000Z"
+      },
+      "resolution": {
+        "resolvedAt": "2026-08-30T16:30:00.000Z",
+        "resolvedBy": "Manish Kumar (Electrical Inspector)",
+        "closureNotes": "Replaced faulty capacitor and installed 70W high-efficiency LED fixture on Pole #SL-12. Illumination verified.",
+        "workOrderRef": "WO-ELEC-4491",
+        "beforePhotoUrl": "https://images.unsplash.com/photo-1509114397022-ed747cca3f65?w=800&auto=format&fit=crop&q=60",
+        "afterPhotoUrl": "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=800&auto=format&fit=crop&q=60",
+        "verificationChecklist": {
+          "siteInspected": true,
+          "hazardNeutralized": true,
+          "photoVerified": true
+        }
+      },
+      "citizenFeedback": {
+        "rating": 5,
+        "comment": "Very fast resolution within 24 hours! Light is working brightly now. Thank you MCD!",
+        "isContested": false,
+        "submittedAt": "2026-08-30T18:00:00.000Z"
+      },
+      "timeline": [
+        {
+          "status": "submitted",
+          "actorName": "Ananya Sharma",
+          "actorRole": "citizen",
+          "timestamp": "2026-08-29T13:30:00.000Z",
+          "comment": "Complaint filed",
+          "publicSafeMessage": "Complaint registered."
+        },
+        {
+          "status": "assigned",
+          "actorName": "Sunita Rao (Supervisor)",
+          "actorRole": "supervisor",
+          "timestamp": "2026-08-29T14:00:00.000Z",
+          "comment": "Assigned to Manish Kumar",
+          "publicSafeMessage": "Assigned to electrical field crew."
+        },
+        {
+          "status": "in_progress",
+          "actorName": "Manish Kumar",
+          "actorRole": "field_officer",
+          "timestamp": "2026-08-30T11:00:00.000Z",
+          "comment": "Crew on site replacing bulb",
+          "publicSafeMessage": "Repair work in progress."
+        },
+        {
+          "status": "resolved",
+          "actorName": "Manish Kumar",
+          "actorRole": "field_officer",
+          "timestamp": "2026-08-30T16:30:00.000Z",
+          "comment": "Repaired and photo proof attached.",
+          "publicSafeMessage": "Issue resolved with photographic proof. Verification window active."
+        }
+      ]
+    },
+    {
+      "ticketId": "GRV-2026-00105",
+      "intakeChannel": "web",
+      "language": "en",
+      "originalText": "Dangling high-voltage live electrical wire hanging 4 feet above sidewalk right next to Delhi Public School Gate 1. Extreme danger of electrocution!",
+      "translatedText": "Dangling high-voltage live electrical wire hanging 4 feet above sidewalk right next to Delhi Public School Gate 1. Extreme danger of electrocution!",
+      "media": [
+        {
+          "url": "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&auto=format&fit=crop&q=60",
+          "type": "image",
+          "caption": "Hazardous low hanging wire near school",
+          "stage": "submission",
+          "aiTags": ["hanging wire", "high voltage", "school safety"]
+        }
+      ],
+      "location": {
+        "lat": 28.5950,
+        "lng": 77.2280,
+        "address": "Mathura Road near DPS Gate 1",
+        "landmark": "Delhi Public School Main Gate",
+        "ward": "Ward-12 (Connaught Place & Central)",
+        "zone": "Central Zone",
+        "isSensitiveZone": true,
+        "sensitiveZoneType": "School"
+      },
+      "aiInference": {
+        "predictedDepartment": "ELEC",
+        "predictedCategory": "hanging_wire_hazard",
+        "confidenceScore": 0.98,
+        "rationale": "High-risk electrocution threat directly adjacent to educational institution gate.",
+        "visualCues": ["Live electrical conductor", "Dangerous low clearance", "Child pedestrian vulnerability"],
+        "sentimentUrgency": "high",
+        "isSafetyHazard": true,
+        "humanVerified": true,
+        "verifiedBy": "Sunita Rao (Supervisor)"
+      },
+      "priority": {
+        "score": 96,
+        "band": "Critical",
+        "breakdown": {
+          "severity": 34,
+          "publicSafetyRisk": 35,
+          "populationImpact": 15,
+          "sensitiveZoneBonus": 18,
+          "recurrenceCount": 0,
+          "slaProximityWeight": 0
+        },
+        "topFactors": [
+          "Direct public safety hazard: Electrocution (+35 pts)",
+          "High vulnerability zone: Delhi Public School (+18 pts)",
+          "Extreme urgency cue detected"
+        ]
+      },
+      "departmentId": "dept_electrical",
+      "departmentName": "Street Lighting & Power",
+      "status": "in_progress",
+      "slaHours": 12,
+      "assignedOfficer": {
+        "name": "Manish Kumar (Electrical Inspector)",
+        "assignedAt": "2026-08-30T08:00:00.000Z"
+      },
+      "timeline": [
+        {
+          "status": "submitted",
+          "actorName": "School Principal Office",
+          "actorRole": "citizen",
+          "timestamp": "2026-08-30T07:45:00.000Z",
+          "comment": "Urgent emergency report submitted",
+          "publicSafeMessage": "Emergency electrical hazard registered."
+        },
+        {
+          "status": "ai_triaged",
+          "actorName": "AI Safety Guardian",
+          "actorRole": "system",
+          "timestamp": "2026-08-30T07:45:02.000Z",
+          "comment": "Priority 96 (Critical). Alerted supervisor queue immediately.",
+          "publicSafeMessage": "Priority escalated to Critical."
+        },
+        {
+          "status": "in_progress",
+          "actorName": "Manish Kumar",
+          "actorRole": "field_officer",
+          "timestamp": "2026-08-30T08:00:00.000Z",
+          "comment": "Power shut off to section. Cable re-tensioning crew on site.",
+          "publicSafeMessage": "Emergency crew dispatched and area secured."
+        }
+      ]
+    }
+  ],
+  "incidentClusters": [
+    {
+      "clusterCode": "INC-KB-001",
+      "title": "Major Drainage & Sewage Failure Cluster - Karol Bagh",
+      "department": "Water Supply & Sewage",
+      "category": "drainage_overflow",
+      "centroid": {
+        "lat": 28.6518,
+        "lng": 77.1892,
+        "ward": "Ward-08 (Karol Bagh & Pusa)",
+        "zone": "North Central Zone"
+      },
+      "radiusMeters": 250,
+      "complaintTickets": ["GRV-2026-00102", "GRV-2026-00103"],
+      "incidentCommander": {
+        "name": "Sunita Rao (Supervisor)"
+      },
+      "severityBand": "High",
+      "status": "investigating",
+      "summaryRationale": "Multiple complaints along Arya Samaj Road indicate a blocked main trunk sewer line requiring super-sucker machine deployment.",
+      "affectedPopulationEst": 4500
+    }
+  ],
+  "auditLogs": [
+    {
+      "logId": "AUD-2026-001",
+      "actor": {
+        "userId": "AI-SYS-01",
+        "name": "AI Triage Core v1.4",
+        "role": "system"
+      },
+      "action": "AUTO_TRIAGE_COMPUTED",
+      "targetType": "Complaint",
+      "targetId": "GRV-2026-00101",
+      "ticketId": "GRV-2026-00101",
+      "changes": {
+        "predictedCategory": "pothole",
+        "priorityScore": 88,
+        "band": "Critical"
+      },
+      "reason": "Indic NLP translation classified voice audio as deep road crater near AIIMS Hospital.",
+      "aiExplanation": "Confidence 96%. Extracted visual and geospatial cues: AIIMS hospital boundary (+20), traffic cavity (+25).",
+      "ipAddress": "127.0.0.1",
+      "createdAt": "2026-08-30T09:30:04.000Z"
+    },
+    {
+      "logId": "AUD-2026-002",
+      "actor": {
+        "userId": "USR-003",
+        "name": "Sunita Rao (Supervisor)",
+        "role": "supervisor"
+      },
+      "action": "CLUSTER_MERGED",
+      "targetType": "IncidentCluster",
+      "targetId": "INC-KB-001",
+      "ticketId": "GRV-2026-00103",
+      "changes": {
+        "status": "duplicate_linked",
+        "primaryTicketId": "GRV-2026-00102"
+      },
+      "reason": "Supervisor confirmed duplicate sewage complaint within 70m radius and merged into Incident Cluster #INC-KB-001.",
+      "ipAddress": "192.168.1.45",
+      "createdAt": "2026-08-30T11:20:00.000Z"
+    },
+    {
+      "logId": "AUD-2026-003",
+      "actor": {
+        "userId": "USR-002",
+        "name": "Manish Kumar (Electrical Inspector)",
+        "role": "field_officer"
+      },
+      "action": "EVIDENCE_CLOSURE_VERIFIED",
+      "targetType": "Complaint",
+      "targetId": "GRV-2026-00104",
+      "ticketId": "GRV-2026-00104",
+      "changes": {
+        "status": "resolved",
+        "beforePhotoAttached": true,
+        "afterPhotoAttached": true,
+        "checklistComplete": true
+      },
+      "reason": "Field inspection verified 70W LED replacement on pole SL-12 with geo-tagged photographic evidence.",
+      "ipAddress": "192.168.1.88",
+      "createdAt": "2026-08-30T16:30:00.000Z"
+    }
+  ]
+}
